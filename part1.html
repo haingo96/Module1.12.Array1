@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Sample Screen</h2>
+<input type="number" id="input">
+<button type="button" id="add">Add</button>
+<button type="button" id="display">Display</button>
+<hr>
+<div id="output"></div>
+
+<script>
+    let arr = []
+    let addButton = document.getElementById('add')
+    addButton.addEventListener('click', addToArray)
+
+    function addToArray() {
+        arr.push(document.getElementById('input').value)
+        document.getElementById('input').value = ''
+    }
+
+    let displayButton = document.getElementById('display')
+    displayButton.addEventListener('click', displayElement)
+    function displayElement(){
+        let e = ''
+        for (let i = 0; i < arr.length; i++) {
+            e += 'Element ' + i + ' = ' + arr[i] + '<br>'
+        }
+        document.getElementById('output').innerHTML = e
+    }
+</script>
+</body>
+</html>
