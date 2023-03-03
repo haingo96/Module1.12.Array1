@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myArr = [1, 2, 3, 4, 5, 6, 7, 8]
+    let inputNumber
+    let equal = false
+
+    do {
+        inputNumber = parseInt(prompt('Input your number!'))
+        for (let i = 0; i < myArr.length; i++) {
+            if (inputNumber === myArr[i]) {
+                equal = true
+            }
+        }
+    }while (equal === false)
+
+    alert('Your input number is in my array')
+</script>
+</body>
+</html>
