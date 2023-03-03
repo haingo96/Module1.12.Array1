@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="gameBoard" style="font-size: xx-large"></p>
+<button id="changeValue" type="submit">Change value</button>
+<body>
+<script>
+    let n = 7
+    let m = 5
+    let gameBoard = []
+
+    for (let i = 0; i < 5; i++) {
+        gameBoard[i] = []
+        for (let j = 0; j < 7; j++) {
+            gameBoard[i][j] = '*'
+        }
+    }
+
+    let display = ''
+    printGameBoard()
+    function printGameBoard(){
+        display = ''
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 7; j++) {
+                display += gameBoard[i][j] + ' '
+            }
+            display += '<br>'
+        }
+        document.getElementById('gameBoard').innerHTML = display
+    }
+
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', changeValue)
+    let turn = 0
+    function changeValue(col, row){
+        col = parseInt(prompt("Input colum position"))
+        row = parseInt(prompt("Input row position"))
+        if (turn % 2 === 0){
+            gameBoard[col][row] = 'x'
+        }else {
+            gameBoard[col][row] = 'o'
+        }
+        printGameBoard()
+        turn++
+    }
+
+</script>
+</body>
+</html>
